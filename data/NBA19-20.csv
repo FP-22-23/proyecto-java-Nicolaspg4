@@ -1,15 +1,15 @@
-Salary;Player;DateOfBirth;Retired;Height;Team;Copa;Weigth;Nationality;Position
-40231758;Stephen Curry;12/28/1988;true;1.68;Golden State Warriors;F;2.08;Sweden;PointGuard
-38506482;Chris Paul;7/18/1968;false;2.49;Oklahoma City Thunder;F;2.03;South Africa;ShootingGuard
-38506482;Russell Westbrook;09/09/1997;false;1.64;Houston Rockets;T;1.99;Croatia;Center
-38199000;John Wall;5/16/1974;false;2.28;Washington Wizards;F;2.16;Poland;SmallForward
-38199000;Kevin Durant;12/06/1994;true;1.68;Brooklyn Nets;F;2.18;Poland;PowerForward
-38199000;James Harden;06/02/1988;true;1.83;Houston Rockets;T;2.44;Thailand;PointGuard
-37436858;LeBron James;1/29/1960;false;2.05;Los Angeles Lakers;F;2.3;Kiribati;ShootingGuard
-34996296;Kyle Lowry;11/21/1994;false;2.41;Toronto Raptors;F;1.67;China;Center
-34449964;Blake Griffin;9/22/1967;false;2.03;Detroit Pistons;T;1.96;Indonesia;PowerForward
-32742000;Tobias Harris;11/23/1966;true;1.65;Philadelphia 76ers;T;2.34;Poland;SmallForward
-32742000;Jimmy Butler;9/20/1960;true;2.47;Miami Heat;F;1.65;Japan;Center
-32742000;Kawhi Leonard;2/28/1981;false;1.82;LA Clippers;F;2.08;Indonesia;SmallForward
-32742000;Klay Thompson;10/01/1990;false;2.06;Golden State Warriors;F;1.92;Indonesia;PointGuard
-32742000;Kemba Walker;04/03/1990;false;2.03;Boston Celtics;F;1.81;Canada;ShootingGuard
+Salary;Player;DateOfBirth;Retired;Height;Team;Copa;Weigth;Nationality;Position;equiposHaJugado;;;
+40231758;Stephen Curry;12/28/1988;true;1.68;Golden State Warriors;F;2.08;Sweden;PointGuard;Milwaukee Bucks,Brooklin Nets;;;
+38506482;Chris Paul;7/18/1968;false;2.49;Oklahoma City Thunder;F;2.03;South Africa;ShootingGuard;Milwaukee Bucks,Dallas Mavericks;;;
+38506482;Russell Westbrook;09/09/1997;false;1.64;Houston Rockets;T;1.99;Croatia;Center;Miami Heat,Dallas Mavericks;;;
+38199000;John Wall;5/16/1974;false;2.28;Washington Wizards;F;2.16;Poland;SmallForward;Los Angeles Lakers,Oklahoma City Thunders;;;
+38199000;Kevin Durant;12/06/1994;true;1.68;Brooklyn Nets;F;2.18;Poland;PowerForward;Dallas Mavericks;;;
+38199000;James Harden;06/02/1988;true;1.83;Houston Rockets;T;2.44;Thailand;PointGuard;Oklahoma City Thunders,Los Angeles Lakers;;;
+37436858;LeBron James;1/29/1960;false;2.05;Los Angeles Lakers;F;2.3;Kiribati;ShootingGuard;Oklahoma City Thunders,Miami Heat;;;
+34996296;Kyle Lowry;11/21/1994;false;2.41;Toronto Raptors;F;1.67;China;Center;Denver Nuggets,Dallas Mavericks;;;
+34449964;Blake Griffin;9/22/1967;false;2.03;Detroit Pistons;T;1.96;Indonesia;PowerForward;Denver Nuggets,Miami Heat;;;
+32742000;Tobias Harris;11/23/1966;true;1.65;Philadelphia 76ers;T;2.34;Poland;SmallForward;Milwaukee Bucks;;;
+32742000;Jimmy Butler;9/20/1960;true;2.47;Miami Heat;F;1.65;Japan;Center;Miami Heat,Brooklin Nets;;;
+32742000;Kawhi Leonard;2/28/1981;false;1.82;LA Clippers;F;2.08;Indonesia;SmallForward;Milwaukee Bucks,Denver Nuggets;;;
+32742000;Klay Thompson;10/01/1990;false;2.06;Golden State Warriors;F;1.92;Indonesia;PointGuard;Brooklin Nets,Dallas Mavericks;;;
+32742000;Kemba Walker;04/03/1990;false;2.03;Boston Celtics;F;1.81;Canada;ShootingGuard;Milwaukee Bucks,Dallas Mavericks;;;

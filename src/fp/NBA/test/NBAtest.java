@@ -1,9 +1,8 @@
 package fp.NBA.test;
-
 import java.time.LocalDate;
 
 import fp.NBA.NBA;
-import fp.NBA.Posicion;
+import fp.common.Posicion;
 
 public class NBAtest {
 
@@ -32,8 +31,14 @@ public class NBAtest {
 		System.out.println("Edad del jugador: "+n.getEdadJugador());
 		System.out.println("Coeficiente altura/peso (Constructor 1): "+n.getCoefAlturaPeso());
 		System.out.println("Coeficiente altura/peso (Constructor 2): "+p.getCoefAlturaPeso());
-		//PROBANDO LOS CHECKERS(Para probarlo cambia la fecha del constructor 3 a LocalDate.of(2024,01,03))
-		System.out.println("Probando los checkers: " + o.getCumpleaños());
+		//PROBANDO LOS CHECKERS
+		try {
+            if (o.getCumpleaños().isBefore(LocalDate.now())) {
+                throw new IllegalArgumentException("La fecha del cumpleaños debe ser anterior a la fecha actual");
+            }
+		}catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 		//PROBANDO EL MÉTODO TOSTRING
 		System.out.println("Método ToString: "+n.toString());
 		System.out.println("Método ToString (Cosntructor 2): "+ p.toString());

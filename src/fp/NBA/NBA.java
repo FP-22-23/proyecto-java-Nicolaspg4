@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import fp.common.Posicion;
 import fp.utiles.Checkers;
 // DECLARACIÓN DE LAS PROPIEDADES BÁSICAS
 public class NBA implements Comparable <NBA>{
@@ -65,6 +66,7 @@ public class NBA implements Comparable <NBA>{
 		return salary;
 	}
 	public void setSalary(Integer salary) {
+		Checkers.check("El salario del jugador debe ser 0 o mayor que 0: ", salary >=0);
 		this.salary = salary;
 	}
 	public String getPlayer() {
@@ -121,6 +123,7 @@ public class NBA implements Comparable <NBA>{
 	public Double getCoefAlturaPeso() {
 		return getAltura()/getPeso();	
 	}
+	
 //REPRESENTACIÓN COMO CADENA
 	public String toString() {
 		return "NBA [salary=" + salary + ", player=" + player + ", cumpleaños=" + cumpleaños + ", retirado=" + retirado
