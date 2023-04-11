@@ -3,7 +3,6 @@ package fp.NBA;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,14 +16,14 @@ public class NBA implements Comparable <NBA>{
 	private Boolean retirado;
 	private Double altura;
 	private String team;
-	private String copa;
+	private Boolean copa;
 	private Double peso;
 	private String nacionalidad;
 	private Posicion position;
 	private List <String> equiposHaJugado;
 //CONSTRUCTOR 1
 	public NBA(Integer salary, String player, LocalDate cumpleaños, Boolean retirado,
-			Double altura, String team, String copa, Double peso, String nacionalidad, Posicion position, String equiposHaJugado) {
+			Double altura, String team, Boolean copa, Double peso, String nacionalidad, Posicion position, List <String> equiposHaJugado) {
 		Checkers.check("El salario del jugador debe ser 0 o mayor que 0: ", salary >=0);
 		Checkers.check("La altura debe ser positiva: ", altura >0);
 		Checkers.check("El peso debe ser positivo: ", peso >0);
@@ -39,7 +38,7 @@ public class NBA implements Comparable <NBA>{
 		this.peso = peso;
 		this.nacionalidad = nacionalidad;
 		this.position = position;
-		this.equiposHaJugado = Arrays.asList(equiposHaJugado.split(","));
+		this.equiposHaJugado = equiposHaJugado;
 		
 	}
 //CONSTRUCTOR 2
@@ -90,11 +89,7 @@ public class NBA implements Comparable <NBA>{
 		this.team = team;
 	}
 	public Boolean getCopa() {
-		Boolean res = true;
-		if (copa == "F") {
-			res = false;	
-		}
-		return res;
+		return copa;
 	}
 	
 	public Double getPeso() {
@@ -126,9 +121,9 @@ public class NBA implements Comparable <NBA>{
 	
 //REPRESENTACIÓN COMO CADENA
 	public String toString() {
-		return "NBA [salary=" + salary + ", player=" + player + ", cumpleaños=" + cumpleaños + ", retirado=" + retirado
-				+ ", altura=" + altura + ", team=" + team + ", copa=" + copa + ", peso=" + peso + ", nacionalidad="
-				+ nacionalidad + ", position=" + position + "]";
+		return "NBA [salary = " + salary + ", player = " + player + ", cumpleaños = " + cumpleaños + ", retirado = " + retirado
+				+ ", altura = " + altura + ", team = " + team + ", copa = " + copa + ", peso = " + peso + ", nacionalidad = "
+				+ nacionalidad + ", position =" + position + ", equiposHaJugado = " + equiposHaJugado +"]";
 	}
 //IGUALDADES
 	public boolean equals(Object obj) {

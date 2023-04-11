@@ -1,5 +1,7 @@
 package fp.NBA.test;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import fp.NBA.NBA;
 import fp.common.Posicion;
@@ -8,8 +10,12 @@ public class NBAtest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		List <String> equipos = new ArrayList<>();
+		equipos.add("Oklahoma City Thunders");
+		equipos.add("LA Clippers");
+		equipos.add("LA Lakers");
 		//CONSTRUCTOR 1:
-		NBA n = new NBA (40231758, "Stephen Curry", LocalDate.of(1990, 12, 12), true, 1.98, "Golden State Warriors", "F", 2.08, "Sweden",Posicion.PointGuard, "Oklahoma City Thunders, LA Clippers, LA Lakers");
+		NBA n = new NBA (40231758, "Stephen Curry", LocalDate.of(1990, 12, 12), true, 1.98, "Golden State Warriors", true, 2.08, "Sweden",Posicion.PointGuard, equipos);
 		//CONSTRUCTOR 2:
 		NBA p = new NBA (40231758, "Stephen Curry",1.68, "Golden State Warriors", 2.08, "Sweden", Posicion.SmallForward);
 		//CONSTRUCTOR 3:
