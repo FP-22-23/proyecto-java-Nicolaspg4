@@ -20,14 +20,13 @@ public class testContenedorNBA {
 
 	}
 	private static void testExisteJugadorConAltura(ContenedorNBA cn, Double altura) {
-		System.out.println("¿Existe algún que mida " + altura + " metros ? : " + cn.existeJugadorConAltura(altura));
+		System.out.println("¿Existe algún jugador que mida " + altura + " metros ? : " + cn.existeJugadorConAltura(altura));
 	}
 	private static void testGetPesoTotal(ContenedorNBA cn) {
 		System.out.println("La suma de todos los pesos es: " + cn.getPesoTotal());
 	}
 	private static void testGetJugadoresConCopa(ContenedorNBA cn) {
-		System.out.println("Devuelve una lista con todos los jugadores que tienen una copa: " + cn.getJugadoresConCopa());
-		
+		System.out.println("Devuelve una lista con todos los jugadores que tienen una copa: " + cn.getJugadoresConCopa());	
 	}
 	private static void testAgrupaJugadoresPorEquipo(ContenedorNBA cn) {
 		System.out.println("Agrupa jugadores por equipo: " + cn.agrupaJugadoresPorEquipo());

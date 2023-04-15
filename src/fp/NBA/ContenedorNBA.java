@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public class ContenedorNBA {
 	private List <NBA> nba;
-	
+
 	public ContenedorNBA() {
 		this.nba = new ArrayList<> ();
 	}

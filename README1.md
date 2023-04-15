@@ -78,42 +78,47 @@ En el tipo base del proyecto (NBA.java), se declaran las propiedades básicas de
 -	getEdadJugador: Calcula la edad del jugador calculando el periodo de tiempo que hay desde el dia de hoy hasta la fecha de su cumpleaños.
 - 	getCoefAlturaPeso: Calcula el coeficiente altura/peso..
 
-#### Tipos auxiliaress
-Este proyecto, cuenta con un tipo Enumerate llamado Posicion, que cuenta con 5 propiedades: PointGuard, ShootingGuard, Center, SmallForward, PowerForward..
+#### Tipos auxiliares
+Este proyecto, cuenta con un tipo Enumerate llamado Posicion, que es un tipo auxiliar, que cuenta con 5 propiedades: PointGuard, ShootingGuard, Center, SmallForward, PowerForward.
 
 ### Factoría
-Descripción breve de la factoría.
-
-- _método 1_: Descripción del método 1.
--	_método 2_: Descripción del método 2.
+En la factoría de este proyecto, tenemos dos funciones principales: la de que el programa sea capaz de leer el csv y la de que los datos estén correctamente parseados. Por otro lado, también existen métodos de parseo de algunas propiedades en concreto como "parseaRetirado" o "parseaCopa".
+- leerNBA (String fichero): Este método se encarga de la correcta lectura del fichero csv en el que tenemos todos los datos que posteriormente serán leídos.
+- parseaNBA (String lineaCSV): Este método se encarga del parseo de los datos, es decir, que todos los datos estén en su correspondiente tipo, poner un formato a la fecha etc.
+- parseaRetirado (String cadena): Este método se encarga del parseo de una propiedad, en este caso, si el jugador está retirado o no. Esta propiedad es de tipo Boolean.
+- parseaCopa (String copa): Este método se encarga del parseo de una propiedad, en este caso, si el jugador tiene una copa o no. Esta propiedad es de tipo Boolean.
 
 ### Tipo Contenedor
 
-Descripción breve del tipo contenedor.
+Es la clase contenedora de los objetos NBA. En este tipo contenedor, tenemos distintos tratamientos secuenciales en los que accedemos a los datos del csv y realizamos operaciones de filtrado, de suma, diccionarios etc.
 
-**Propiedades**:
-
-- _propiedad1_, de tipo \<Tipo1\>, consultable. 
-- _propiedad2_, de tipo \<Tipo2\>, consultable y modificable. 
-- ...
-- 
-**Constructores**: 
-
-- C1: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
-- ...
-
-**Restricciones**:
- 
-- R1: Descripción de la restricción 1.
-- R2: Descripción de la restricción 2.
-- ...
-- 
-**Criterio de igualdad**: Describir el criterio de igualdad
-
-**Criterio de ordenación**: Describir el criterio de ordenación (si lo hay).
 
 **Otras operaciones**:
  
--	_método 1_: Descripción del método 1.
-- ...
+-	getNumeroElementos (): Obtiene el número de datos de NBA.
+- 	agregarElementos (NBA n): Añadir nuevos datos a NBA.
+-	incorporarNBA (List <NBA> totalNBA): Incorpora una lista de NBA.
+- 	eliminarNBA (NBA a): Elimina una serie de datos de NBA
+-	existeJugadorConAltura (ContenedorNBA, Double altura): Devuelve true si existe un jugador con la altura pasada como parámetro y false si no 	existe (de tipo Boolean).
+-	getPesoTotal(): Devuelve la suma de todos los pesos de los jugadores (de tipo Double).
+-	getJugadoresConCopa(): Devuelve una lista con todos los jugadores que han ganado una copa (de tipo List <String>).
+-	agrupaJugadoresPorEquipo(): Devuelve un map en el que las claves son los equipos y los valores una lista con los jugadores que juegan en 	esos equipos (de tipo Map <String, List <String>>).
+-	numeroJugadoresRetiradosOno(): Devuelve un map en el que las claves es true o false según si se han retirado o no y los valores el númeero 	de jugadores retirados o no (de tipo Map <Boolean, Integer>).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

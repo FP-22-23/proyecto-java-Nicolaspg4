@@ -40,7 +40,7 @@ public class FactoriaNBA {
 		Double peso = Double.parseDouble(campos[7].trim());
 		String nacionalidad = campos[8].trim() ;
 		Posicion position = Posicion.valueOf(campos[9].trim());
-		List<String> equiposHaJugado = Arrays.asList(campos[10].trim().split(""));
+		List<String> equiposHaJugado = Arrays.asList(campos[10].trim().split(","));
 		return new NBA(salary, player, cumpleaños, retirado, altura, team, copa, peso, nacionalidad, position, equiposHaJugado);
 	}
 	private static Boolean parseaRetirado(String cadena) {
@@ -61,5 +61,6 @@ public class FactoriaNBA {
 		}
 		return res;
 	}
+
 
 }
