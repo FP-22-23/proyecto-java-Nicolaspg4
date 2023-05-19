@@ -1,14 +1,23 @@
 package fp.NBA;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import fp.common.Posicion;
 
 public class ContenedorNBA {
 	private List <NBA> nba;
@@ -119,8 +128,99 @@ public class ContenedorNBA {
 		}
 		return res1;
 	}
+	// ENTREGA 3:
+	//1.- EXISTE (STREAMS)
+	public Boolean existeJugadorParaEquipo(String equipo) {
+		Boolean res = false;
+		if (nba.stream().filter(x-> x.getTeam().equals(equipo)) != null) {
+			res = true;
+		}
+		return res;
+	}
+	//2.- MEDIA PESO (STREAMS)
+	public Double MediaPesoJugadores() {
+		return nba.stream().collect(Collectors.averagingDouble(x->x.getPeso()));
+	}
+	//3.- SELECCIÓN CON FILTRADO (STREAMS)
+	public List<String> JugadoresNoRetirados(){
+		return nba.stream()
+				.filter(x->x.getRetirado().equals(false))
+				.map(x->x.getPlayer())
+				.collect(Collectors.toList());
+	}
+	//4.- MÁXIMO O MÍNIMO CON FILTRADO (STREAMS)
+	public Double getMaximaAlturaDeJugadorQueHaJugadoOJuegaEnUnEquipo(String equipo,String equipoHaJugado) {
+		return nba.stream()
+				.filter(x-> x.getTeam().equals(equipo) && x.getEquiposHaJugado().contains(equipoHaJugado))
+				.mapToDouble(x-> x.getAltura())
+				.max()
+				.getAsDouble();
+	}
+	//5.- SELECCION CON FILTRADO Y ORDENACIÓN
+	public List<Double> getJugadoresMasAltosConCopaOrdenados(){
+		return nba.stream()
+				.filter(x-> x.getCopa().equals(true))
+				.map(x-> x.getAltura())
+				.sorted(Comparator.reverseOrder())
+				.collect(Collectors.toList());
+	}
+	//6.- DEVUELVE LAS NACIONALIDADES DE LOS JUGADORES DE CADA EQUIPO
+	public Map <String, List<String>> getNacionalidadesPorEquipo(){
+		return nba.stream()
+				.collect(Collectors.groupingBy(x->x.getTeam(), Collectors.mapping(x->x.getNacionalidad(), Collectors.toList())));
+	}
+	//7.- DEVUELVE EL NÚMERO DE JUGADORES DE CADA NACIONALIDAD
+	public Map <String, Integer> getNumeroJugadoresCadaNacionalidad(){
+		return nba.stream()
+				.collect(Collectors.groupingBy(x-> x.getNacionalidad(), 
+						Collectors.collectingAndThen(Collectors.counting(), x-> x.intValue())));
+	}
+	//8.- DEVUELVE EL SALARIO MÁS ALTO DE CADA EQUIPO
+	public Map<String, Integer> getSalarioMasAltoPorEquipo(){
+		return nba.stream()
+				.collect(Collectors.groupingBy(NBA::getTeam, Collectors.collectingAndThen(Collectors.toList(), 
+						listaSalarios -> listaSalarios.stream()
+						.max(Comparator.comparingInt(NBA::getSalary))
+						.map(NBA::getSalary)
+						.orElse(null))));	
+	}
+	//9.- DEVUELVE LAS N ALTURAS MAS ALTAS DE CADA NACIONALIDAD
+	public SortedMap <String, List<Double>> getNAlturasPorNacionalidad(Integer n){
+		return nba.stream()
+	            .collect(Collectors.groupingBy(NBA::getNacionalidad,
+	                    Collectors.collectingAndThen(Collectors.toList(),
+	                            nbaplayer -> nbaplayer.stream()
+	                                    .sorted(Comparator.comparingDouble(NBA::getAltura).reversed())
+	                                    .limit(n)
+	                                    .map(NBA::getAltura)
+	                                    .collect(Collectors.toList()))))
+		  	.entrySet().stream()
+		  	.sorted(Map.Entry.comparingByKey())
+		  	.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> y, TreeMap::new));
+	}
 	
 	
+	//10.- DEVUELVE LA POSICION EN LA QUE HAY MAYOR NÚMERO DE JUGADORES
+	public Map.Entry <Posicion, Integer> getMayorNumeroJugadoresEnPosicion(){
+		return nba.stream()
+				.collect(Collectors.groupingBy(x->x.getPosition(), Collectors.collectingAndThen(Collectors.counting(), x->x.intValue())))
+				.entrySet()
+				.stream()
+				.max(Map.Entry.comparingByValue())
+				.orElse(null);
+	}
+	public Map.Entry<String,Double> getMayorMediaAlturaDeTodosLosEquipos(){
+		return nba.stream()
+				.collect(Collectors.groupingBy(NBA::getTeam, Collectors.collectingAndThen(Collectors.averagingDouble(NBA::getAltura), x->x.doubleValue())))
+				.entrySet()
+				.stream()
+				.max(Map.Entry.comparingByValue())
+				.orElse(null);
+	}
+
+
+		
+		
 	
 	public int hashCode() {
 		return Objects.hash(nba);

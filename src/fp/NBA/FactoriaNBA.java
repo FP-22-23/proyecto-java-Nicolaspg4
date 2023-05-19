@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+
+import fp.common.NBARecord;
 import fp.common.Posicion;
 import fp.utiles.Checkers;
 
@@ -41,7 +43,8 @@ public class FactoriaNBA {
 		String nacionalidad = campos[8].trim() ;
 		Posicion position = Posicion.valueOf(campos[9].trim());
 		List<String> equiposHaJugado = Arrays.asList(campos[10].trim().split(","));
-		return new NBA(salary, player, cumpleaños, retirado, altura, team, copa, peso, nacionalidad, position, equiposHaJugado);
+		NBARecord record = new NBARecord(Integer.parseInt(campos[0].trim()), campos[1].trim(), campos[8].trim());
+		return new NBA(salary, player, cumpleaños, retirado, altura, team, copa, peso, nacionalidad, position, equiposHaJugado, record);
 	}
 	private static Boolean parseaRetirado(String cadena) {
 		Boolean res = null;

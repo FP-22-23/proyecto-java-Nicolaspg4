@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fp.NBA.NBA;
+import fp.common.NBARecord;
 import fp.common.Posicion;
 
 public class NBAtest {
@@ -15,7 +16,7 @@ public class NBAtest {
 		equipos.add("LA Clippers");
 		equipos.add("LA Lakers");
 		//CONSTRUCTOR 1:
-		NBA n = new NBA (40231758, "Stephen Curry", LocalDate.of(1990, 12, 12), true, 1.98, "Golden State Warriors", true, 2.08, "Sweden",Posicion.PointGuard, equipos);
+		NBA n = new NBA (40231758, "Stephen Curry", LocalDate.of(1990, 12, 12), true, 1.98, "Golden State Warriors", true, 2.08, "Sweden",Posicion.PointGuard, equipos, new NBARecord(3000000, "Juan Ramón Jiménez", "España"));
 		//CONSTRUCTOR 2:
 		NBA p = new NBA (40231758, "Stephen Curry",1.68, "Golden State Warriors", 2.08, "Sweden", Posicion.SmallForward);
 		//CONSTRUCTOR 3:

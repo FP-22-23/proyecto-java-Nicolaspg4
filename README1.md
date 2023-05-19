@@ -104,7 +104,27 @@ Es la clase contenedora de los objetos NBA. En este tipo contenedor, tenemos dis
 -	getJugadoresConCopa(): Devuelve una lista con todos los jugadores que han ganado una copa (de tipo List <String>).
 -	agrupaJugadoresPorEquipo(): Devuelve un map en el que las claves son los equipos y los valores una lista con los jugadores que juegan en 	esos equipos (de tipo Map <String, List <String>>).
 -	numeroJugadoresRetiradosOno(): Devuelve un map en el que las claves es true o false según si se han retirado o no y los valores el númeero 	de jugadores retirados o no (de tipo Map <Boolean, Integer>).
+- 	existeJugadorParaEquipo(): verifica si existe algún jugador en el equipo especificado. Retorna un valor booleano que indica si hay jugadores en el equipo.
 
+- 	MediaPesoJugadores(): calcula la media del peso de todos los jugadores. Retorna un valor de tipo Double que representa la media de los pesos.
+
+- 	JugadoresNoRetirados(): filtra los jugadores que no se han retirado y devuelve una lista de sus nombres.
+
+- 	getMaximaAlturaDeJugadorQueHaJugadoOJuegaEnUnEquipo(): busca el jugador más alto que haya jugado o juegue en un equipo específico y retorna su altura.
+
+- 	getJugadoresMasAltosConCopaOrdenados(): selecciona los jugadores más altos que hayan ganado una copa y los ordena de forma descendente. Retorna una lista de alturas de tipo Double.
+
+- 	getNacionalidadesPorEquipo(): devuelve un mapa donde las claves son los nombres de los equipos y los valores son listas de las nacionalidades de los jugadores de cada equipo.
+
+- 	getNumeroJugadoresCadaNacionalidad(): devuelve un mapa donde las claves son las nacionalidades de los jugadores y los valores son el número de jugadores de cada nacionalidad.
+
+- 	getSalarioMasAltoPorEquipo(): devuelve un mapa donde las claves son los nombres de los equipos y los valores son los salarios más altos de los jugadores de cada equipo.
+
+- 	getNAlturasPorNacionalidad(): devuelve un mapa ordenado (SortedMap) donde las claves son las nacionalidades de los jugadores y los valores son las N alturas más altas de cada nacionalidad, ordenadas de forma descendente.
+
+- 	getMayorNumeroJugadoresEnPosicion(): devuelve la posición con el mayor número de jugadores. Retorna un objeto Map.Entry que contiene la posición y el número de jugadores.
+
+- 	getMayorMediaAlturaDeTodosLosEquipos():	 devuelve el equipo con la mayor media de altura de los jugadores. Retorna un objeto Map.Entry que contiene el nombre del equipo y la media de altura.
 
 
 

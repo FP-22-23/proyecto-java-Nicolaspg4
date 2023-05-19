@@ -6,6 +6,7 @@ import java.time.Period;
 import java.util.List;
 import java.util.Objects;
 
+import fp.common.NBARecord;
 import fp.common.Posicion;
 import fp.utiles.Checkers;
 // DECLARACIÓN DE LAS PROPIEDADES BÁSICAS
@@ -21,9 +22,10 @@ public class NBA implements Comparable <NBA>{
 	private String nacionalidad;
 	private Posicion position;
 	private List <String> equiposHaJugado;
+	private NBARecord record;
 //CONSTRUCTOR 1
 	public NBA(Integer salary, String player, LocalDate cumpleaños, Boolean retirado,
-			Double altura, String team, Boolean copa, Double peso, String nacionalidad, Posicion position, List <String> equiposHaJugado) {
+			Double altura, String team, Boolean copa, Double peso, String nacionalidad, Posicion position, List <String> equiposHaJugado, NBARecord record) {
 		Checkers.check("El salario del jugador debe ser 0 o mayor que 0: ", salary >=0);
 		Checkers.check("La altura debe ser positiva: ", altura >0);
 		Checkers.check("El peso debe ser positivo: ", peso >0);
@@ -39,6 +41,7 @@ public class NBA implements Comparable <NBA>{
 		this.nacionalidad = nacionalidad;
 		this.position = position;
 		this.equiposHaJugado = equiposHaJugado;
+		this.record = record;
 		
 	}
 //CONSTRUCTOR 2
@@ -123,7 +126,7 @@ public class NBA implements Comparable <NBA>{
 	public String toString() {
 		return "NBA [salary = " + salary + ", player = " + player + ", cumpleaños = " + cumpleaños + ", retirado = " + retirado
 				+ ", altura = " + altura + ", team = " + team + ", copa = " + copa + ", peso = " + peso + ", nacionalidad = "
-				+ nacionalidad + ", position =" + position + ", equiposHaJugado = " + equiposHaJugado +"]";
+				+ nacionalidad + ", position =" + position + ", equiposHaJugado = " + equiposHaJugado+  ", record = " + record +"]";
 	}
 //IGUALDADES
 	public boolean equals(Object obj) {
